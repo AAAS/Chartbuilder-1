@@ -5,18 +5,27 @@
  * @static
  */
 var chart_sizes = {
-	medium: {
-		width: 640,
-		height: 390
+	auto: {
+		width: 699,
+		height: 600,
+		sizeClass: "online_full"
 	},
-	spotLong: {
-		width: 320,
-		height: 390
+	printTwo: {
+		width: 360,
+		height: 350,
+		sizeClass: "print_two"
 	},
-	spotSmall: {
-		width: 320,
-		height: 250
+		onlineHalf: {
+		width: 300,
+		height: 400,
+		sizeClass: "online_half"
+	},
+	printOne: {
+		width: 185,
+		height: 300,
+		sizeClass: "online_vertical"
 	}
+
 };
 
 module.exports = chart_sizes;

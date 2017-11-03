@@ -18,31 +18,32 @@ var TextInput = chartbuilderUI.TextInput;
 // Give chart sizes friendly names
 var chart_sizes = [
 	{
-		title: "Auto",
-		content: "Auto",
+		title: "Online Full-column",
+		content: "Online Full-column",
 		value: "auto"
 	},
 	{
-		title: "Medium",
-		content: "Medium",
-		value: "medium"
+		title: "Print Two-column",
+		content: "Print Two-column",
+		value: "printTwo"
 	},
 	{
-		title: "Long spot chart",
-		content: "Long spot chart",
-		value: "spotLong"
+		title: "Online Half-column",
+		content: "Online Half-column",
+		value: "onlineHalf"
 	},
 	{
-		title: "Small spot chart",
-		content: "Small spot chart",
-		value: "spotSmall"
+		title: "Print One-column",
+		content: "Print One-column",
+		value: "printOne"
 	}
 ];
 
 var text_input_values = [
 	{ name: "title", content: "Title" },
+	{ name: "sub", content: "Sub" },
 	{ name: "credit", content: "Credit" },
-	{ name: "source", content: "Source" }
+	{ name: "source", content: "Data source" }
 ];
 
 /**
@@ -63,6 +64,7 @@ var ChartMetadata = React.createClass({
 			size: PropTypes.string.isRequired,
 			source: PropTypes.string,
 			credit: PropTypes.string,
+			sub: PropTypes.string,
 			title: PropTypes.string
 		}),
 		stepNumber: PropTypes.string,
