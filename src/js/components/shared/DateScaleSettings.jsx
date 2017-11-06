@@ -225,7 +225,6 @@ var DateScaleSettings = React.createClass({
 						value={dateSettings.dateFormat}
 					/>
 				</div>
-				{timezoneSettings}
 			</div>
 		)
 	}
