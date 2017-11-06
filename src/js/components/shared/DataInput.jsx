@@ -79,6 +79,7 @@ var DataInput = React.createClass({
 	// Render only the dropover area
 	_renderDropArea: function() {
 		return (
+
 			<div
 				className={this.props.className + " dropping"}
 				onDragLeave={this._toggleDropState}
@@ -109,13 +110,14 @@ var DataInput = React.createClass({
 		return (
 			<div className={this.props.className}
 				onDragOver={this._toggleDropState}
-			>
+			>	
+				<label>Clean and rank your data in Excel, then paste it in the text box below. The first column should be the x-axis.</label>
 				<TextArea
 					value={this.props.chartProps.input.raw}
 					onChange={this._handleReparseUpdate.bind(null, "input")}
 					className="data-input"
 					defaultValue={this.props.chartProps.input.raw}
-					placeholder="If you have a json file to load, drop that here"
+					placeholder="Paste your data here"
 					isRequired={true}
 				/>
 				{errors}

@@ -34,20 +34,17 @@ var DateScaleSettings = React.createClass({
 		// from `util/process-dates.js` on update
 		dateFrequencyOptions: [
 			{ value: "auto", content: "auto" },
-			{ value: "1h", content: "1 hour" },
-			{ value: "2h", content: "2 hours" },
-			{ value: "3h", content: "3 hours" },
-			{ value: "4h", content: "4 hours" },
-			{ value: "6h", content: "6 hours" },
-			{ value: "1d", content: "1 day" },
-			{ value: "1w", content: "1 week" },
-			{ value: "1m", content: "1 month" },
-			{ value: "3m", content: "3 months" },
-			{ value: "6m", content: "6 months" },
 			{ value: "1y", content: "1 year" },
 			{ value: "2y", content: "2 years" },
 			{ value: "5y", content: "5 years" },
 			{ value: "10y", content: "10 years" },
+			{ value: "1m", content: "1 month" },
+			{ value: "2m", content: "2 months" },
+			{ value: "3m", content: "3 months" },
+			{ value: "6m", content: "6 months" },
+			{ value: "1h", content: "1 hour" },
+			{ value: "1d", content: "1 day" },
+			{ value: "1w", content: "1 week" },
 			{ value: "20y", content: "20 years" },
 			{ value: "50y", content: "50 years" },
 			{ value: "100y", content: "100 years" }
@@ -56,20 +53,15 @@ var DateScaleSettings = React.createClass({
 		// Use ids to look up appropriate date formatter from `util/process-dates.js`
 		dateFormatOptions: [
 			{ value: "auto", content: "auto" },
-			{ value: "lmdy", content: dateParsers["lmdy"] },
-			{ value: "mmdd", content: dateParsers["mmdd"] },
-			{ value: "Mdd", content: dateParsers["Mdd"] },
-			{ value: "ddM", content: dateParsers["ddM"] },
-			{ value: "M1d", content: dateParsers["M1d"] },
-			{ value: "mmyy", content: dateParsers["mmyy"] },
-			{ value: "yy", content: dateParsers["yy"] },
 			{ value: "yyyy", content: dateParsers["yyyy"] },
-			{ value: "QJan", content: "Q2 (Jan. FY)" },
-			{ value: "QJul", content: "Q2 (July FY)"  },
-			{ value: "MM", content: dateParsers["MM"] },
+			{ value: "yy", content: dateParsers["yy"] },
 			{ value: "M", content: dateParsers["M"] },
-			{ value: "hmm", content: dateParsers["hmm"] },
-			{ value: "h", content: dateParsers["h"] }
+			{ value: "Myy", content: dateParsers["Myy"] },
+			{ value: "QJan", content: "Q2 (FY starting in Jan.)" },
+			{ value: "QJul", content: "Q4 (FY starting in Jul.)"  },
+			{ value: "ddM", content: dateParsers["ddM"] },
+			{ value: "ddMyy", content: dateParsers["ddMyy"] },
+			{ value: "hmm", content: dateParsers["hmm"] }
 		],
 
 		timeDisplayOptions: [
@@ -233,7 +225,6 @@ var DateScaleSettings = React.createClass({
 						value={dateSettings.dateFormat}
 					/>
 				</div>
-				{timezoneSettings}
 			</div>
 		)
 	}

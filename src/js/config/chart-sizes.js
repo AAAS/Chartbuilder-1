@@ -6,7 +6,7 @@
  */
 var chart_sizes = {
 	auto: {
-		width: 699,
+		width: 700,
 		height: 600,
 		sizeClass: "online_full"
 	},
@@ -16,8 +16,8 @@ var chart_sizes = {
 		sizeClass: "print_two"
 	},
 		onlineHalf: {
-		width: 300,
-		height: 400,
+		width: 350,
+		height: 450,
 		sizeClass: "online_half"
 	},
 	printOne: {

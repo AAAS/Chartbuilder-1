@@ -1,12 +1,12 @@
 // Colors
 
 $color-bg = #fff
-$color-body-text = #666
-$color-chart-gridline = #ddd
-$color-chart-meta = #CCCCCC
-$color-chart-axis-text = #666
-$color-chart-title-text = #333
-$color-chart-zeroline = #333
+$color-body-text = #000
+$color-chart-gridline = #000
+$color-chart-meta = #000
+$color-chart-axis-text = #000
+$color-chart-title-text = #000
+$color-chart-zeroline = #000
 
 $color-editor-border = #e2e2e2
 $color-editor-fill = #F1F1F1
@@ -15,17 +15,18 @@ $color-editor-text = #333333
 $color-editor-placeholder = #CACACA
 
 $chart-colors = \
-	#a50026 \
-	#fdae61 \
-	#d73027 \
-	#abd9e9 \
-	#f46d43 \
-	#74add1 \
-	#4575b4 \
-	#313695 \
-	#999 \
-	#666 \
-	#ccc
+	#005e7f \
+	#9ccde4 \
+	#9e0b0f \
+	#df897c \
+	#007c7c \
+	#78cdd1\
+	#dc661e \
+	#fcbc7e \
+	#000 \
+	#808285 \
+	#bcbec0 \
+	#fff
 
 for c, i in $chart-colors
 	[data-color-index=\"{i}\"]
@@ -35,7 +36,7 @@ for c, i in $chart-colors
 			fill (c)
 		circle
 			stroke (c)
-			stroke-width 2px
+			stroke-width 1px
 			fill (c)
 
 	.color-index-{i}

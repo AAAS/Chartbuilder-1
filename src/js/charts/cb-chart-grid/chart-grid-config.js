@@ -24,10 +24,11 @@ var ChartConfig = require("../ChartConfig");
 * @property {object} padding - Distances btwn inner chart elements and container
 */
 var display = {
-	afterTitle: "1.6em", // distance between top of title and top of legend or chart
-	afterLegend: "0.8em", // distance between top of legend and top of chart
-	blockerRectOffset: "0.25em", // distance between text and background blocker rect
-	barHeight: "1.9em", // height of each bars
+	afterTitle: "2em", // distance between top of title and top of sub, legend or chart
+	afterSub: "0.25em", // distance between top of sub and top of legend or chart
+	afterLegend: "1.2em", // distance between top of legend and top of chart
+	blockerRectOffset: 6, // distance between text and background blocker rect
+	barHeight: "0.8em", // height of each bars
 	columnExtraPadding: "0.5em",
 	barInnerPadding: 0.4, // % of col group width to pad btwn each
 	barOuterPadding: 0.1, // % of col group width to pad btwn each
@@ -40,16 +41,16 @@ var display = {
 	},
 	xy: require("../cb-xy/xy-config").display,
 	margin: {
-		top: "0.8em",
+		top: "0.9em",
 		right: "0.25em",
-		bottom: "0.15em",
-		left: "0.25em"
+		bottom: "0.5em",
+		left: "0.5em"
 	},
 	padding: {
-		top: "0.4em",
-		right: 0,
-		bottom: "1em",
-		left: 0
+		top: "0.5em",
+		right: "0.25em",
+		bottom: "0.5em",
+		left: "0.25em"
 	}
 };
 /**
@@ -85,6 +86,7 @@ var defaultProps = {
 			primaryScale: {
 				ticks: 5,
 				precision: 0,
+				axislabel: "",
 				prefix: "",
 				suffix: ""
 			},
@@ -97,6 +99,7 @@ var defaultProps = {
 			numericSettings: {
 				ticks: 5,
 				precision: 0,
+				axislabel: "",
 				prefix: "",
 				suffix: ""
 			}
@@ -124,14 +127,15 @@ var defaultProps = {
 		id: null,
 		chartType: "chartgrid",
 		title: "",
-		source: "",
-		credit: "Made with Chartbuilder",
+		sub: "",
+		source: "Data: ",
+		credit: "/Science",
 		size: "auto"
 	}
 };
 
 var chart_grid_config = new ChartConfig({
-	displayName: "Chart grid",
+	displayName: "Bar Chart/Multiple Charts",
 	parser: require("./parse-chart-grid"),
 	calculateDimensions: require("./chart-grid-dimensions"),
 	display: display,

@@ -36,9 +36,11 @@ var display = {
 	labelXMargin: "0.6em",
 	labelTextMargin: "0.3em",
 	labelRowHeight: "1.2em",
-	afterTitle: "1.4em",
-	afterLegend: "1em",
-	blockerRectOffset: "0.2em",
+	afterTitle: "2em",
+	afterSub: "0.5em",
+	afterSubHalf: "5.5em",
+	afterLegend: "1.6em",
+	blockerRectOffset: "0.3em",
 	lineMarkThreshold: 10, // render marks (dots) on lines if data < N
 	columnOuterPadding: 0.01, // % of width to pad for columns
 	columnInnerPadding: 0, // % of col group width to pad btwn each
@@ -49,21 +51,22 @@ var display = {
 		secondaryScale: "right",
 	},
 	aspectRatio: {
-		wide: (9 / 16),
-		longSpot: (4 / 3),
-		smallSpot: (3 / 4)
+		horizontal: (9 / 16),
+		vertical: (1 / 1),
+		wide: (1 / 2),
+		square: (7 / 10)
 	},
 	margin: {
-		top: "0.8em",
-		right: "0.25em",
-		bottom: "0.15em",
-		left: "0.25em"
+		top: "0.85em",
+		right: "0.5em",
+		bottom: "0.5em",
+		left: "0.65em"
 	},
 	padding: {
 		top: 0,
-		right: 0,
+		right: "1.5em",
 		bottom: "3.5em",
-		left: 0
+		left: "0.75em"
 	}
 };
 
@@ -95,6 +98,7 @@ var defaultProps = {
 			primaryScale: {
 				ticks: 5,
 				precision: 0,
+				axislabel: "",
 				prefix: "",
 				suffix: ""
 			},
@@ -107,6 +111,7 @@ var defaultProps = {
 			numericSettings: {
 				ticks: null,
 				precision: 0,
+				axislabel: "",
 				prefix: "",
 				suffix: ""
 			}
@@ -144,14 +149,15 @@ var defaultProps = {
 	metadata: {
 		chartType: 'xy',
 		title: "",
-		source: "",
-		credit: "Made with Chartbuilder",
+		sub: "",
+		source: "Data: ",
+		credit: "/Science",
 		size: "auto"
 	}
 };
 
 var xy_config = new ChartConfig({
-	displayName: "XY Chart",
+	displayName: "Combined Chart",
 	parser: require("./parse-xy"),
 	calculateDimensions: require("./xy-dimensions"),
 	display: display,
