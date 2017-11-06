@@ -288,26 +288,28 @@ var dateFrequencies = {
 
 function humanReadableNumber(n) {
 	//turns a number into an int that is either 1, 2, 5, or a multiple of 10
-	var rounded = Math.round(n);
-	if (rounded < 2) {
-		return 1;
-	}
+	if (n === n) {
+		var rounded = Math.round(n);
+			if (rounded < 2) {
+				return 1;
+			}
 
-	if (n < 3.5) {
-		return 2;
-	}
+			if (n < 3.5) {
+				return 2;
+			}
 
-	if (n < 7) {
-		return 5;
-	}
+			if (n < 7) {
+				return 5;
+			}
 
-	if (n <= 10) {
-		return 10;
-	}
+			if (n <= 10) {
+				return 10;
+			}
 
-	var magnitude = Math.floor((Math.log(n) / Math.LN10)) + 1;
-	var factor = Math.pow(10,magnitude);
-	return humanReadableNumber(n/factor) * factor;
+		var magnitude = Math.floor((Math.log(n) / Math.LN10)) + 1;
+		var factor = Math.pow(10,magnitude);
+		return humanReadableNumber(n/factor) * factor;
+	}
 }
 
 // Automatically calculate date frequency if not selected
