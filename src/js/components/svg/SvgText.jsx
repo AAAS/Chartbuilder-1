@@ -33,7 +33,8 @@ var SvgText = React.createClass({
 			if (nextState.lines.length === 1) {
 				this.props.onUpdate(0);
 			} else {
-				this.props.onUpdate((nextState.lines.length) * this.props.heightPerLine);
+				var textBlockHeight = Math.round(nextState.lines.length * this.props.heightPerLine * this.props.emSize);
+				this.props.onUpdate(textBlockHeight);
 			}
 			return false;
 		}
@@ -140,7 +141,8 @@ var SvgText = React.createClass({
 			if (this.state.lines.length === 1) {
 				this.props.onUpdate(0);
 			} else {
-				this.props.onUpdate((this.state.lines.length) * this.props.heightPerLine);
+				var textBlockHeight = this.state.lines.length * this.props.heightPerLine * this.props.emSize;
+				this.props.onUpdate(textBlockHeight);
 			}
 		}
 	},

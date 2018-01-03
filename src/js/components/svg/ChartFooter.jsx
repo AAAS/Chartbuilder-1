@@ -22,7 +22,7 @@ var ChartFooter = React.createClass({
 	_createSourceLine: function() {
 		var sourceLine;
 		if (this.props.metadata.source && this.props.metadata.source !== "") {
-			sourceLine = "Data: " + this.props.metadata.source;
+			sourceLine = this.props.metadata.source;
 		} else {
 			sourceLine = "";
 		}
