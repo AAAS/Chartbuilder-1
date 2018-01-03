@@ -79,8 +79,12 @@ var RendererWrapper = React.createClass({
 	// process the size-relative chart config of a chart type when type is changed
 	componentWillReceiveProps: function(nextProps) {
 		var newType = nextProps.model.metadata.chartType;
+		var newSize = nextProps.model.metadata.size;
 		var prevType = this.props.model.metadata.chartType;
 		if (newType !== prevType) {
+			var emSize = 20;
+			(newSize == "printTwo" || newSize == "printOne" ) ? emSize = 10 : emSize = 20;
+			this.state.emSize = emSize;
 			var chartConfig = convertConfig(chartConfigs[newType], null, this.state.emSize, this.state.domNodeWidth);
 			this.setState({ chartConfig: chartConfig });
 		}
@@ -170,11 +174,13 @@ var RendererWrapper = React.createClass({
 		return setMobile;
 	},
 
-	//_handleSvgUpdate: function(k, v) {
-		//var newSetting = {};
-		//newSetting[k] = v;
+	_handleSvgUpdate: function(k, v) {
+		var newSetting = {};
+		newSetting[k] = v;
+		updatedValues[k] = v;
+		this.setState(update(this.state, { $merge: updatedValues }));
 		//this.setState(update(this.state, { $merge: newSetting }));
-	//},
+	},
 
 	render: function() {
 		var chartType = this.props.model.metadata.chartType;

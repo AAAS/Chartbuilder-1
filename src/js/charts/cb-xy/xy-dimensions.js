@@ -12,6 +12,7 @@ function calculate_xy_dimensions(width, opts) {
 	var height;
 	var aspectRatio = opts.displayConfig.aspectRatio;
 	var metadata = opts.metadata;
+	var sizeClass = chartSizes[metadata.size].sizeClass;
 
 	if (metadata.size == "auto" || opts.enableResponsive) {
 		// use current width
@@ -21,28 +22,33 @@ function calculate_xy_dimensions(width, opts) {
 
 	switch (metadata.size) {
 		case "auto":
+			height = Math.round(width * aspectRatio.horizontal);
+			break;
+
+		case "printTwo":
 			height = Math.round(width * aspectRatio.wide);
 			break;
 
-		case 'medium':
-			height = Math.round(width * aspectRatio.wide);
+		case "onlineHalf":
+			height = Math.round(width * aspectRatio.vertical);
 			break;
 
-		case "spotLong":
-			height = Math.round(width * aspectRatio.longSpot);
-			break;
-
-		case "spotSmall":
-			height = Math.round(width * aspectRatio.smallSpot);
+		case "printOne":
+			height = Math.round(width * aspectRatio.square);
 			break;
 
 		default:
-			height = Math.round(width * aspectRatio.wide);
+			height = Math.round(width * aspectRatio.horizontal);
 	}
-
+	//console.log(sizeClass, metadata.size, width, height);
 	return {
 		width: width,
-		height: height
+		height: height,
+		//height: height + opts.extraHeight,
+		titleHeight: opts.titleHeight,
+		subHeight: opts.subHeight,
+		extraHeight: opts.extraHeight,
+		sizeClass: sizeClass
 	};
 }
 
