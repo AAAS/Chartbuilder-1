@@ -1,4 +1,4 @@
-$header-height = 3em
+$header-height = 2.7em
 $chart-area-width = 700px
 $chart-area-padding = 20px
 
@@ -103,7 +103,7 @@ canvas
 
 .clearfix
 	clear both
-
+	
 *
 	-ms-overflow-style none
 
@@ -125,6 +125,7 @@ canvas
 		margin 0
 		line-height 1
 		padding 0
+		font-family $font-sans-bold
 
 .chartbuilder-container
 	margin-top $header-height + 0.75
@@ -135,7 +136,6 @@ canvas
 	width $chart-area-width
 	left ($chart-area-padding / 2)
 	top $header-height
-	overflow-y scroll
 	overflow-x hidden
 	height 100%
 	max-width 100%
@@ -160,7 +160,6 @@ canvas
 
 		.phone-wrap
 			background-image url('/assets/iphone-6.svg')
-			background-size contain
 			transform scale(1)
 			transform-origin top
 			height 881px
@@ -183,7 +182,7 @@ canvas
 	padding 0 10px
 	min-width 100px
 	@import 'chart-editor.styl'
-
+	
 @media screen and (max-width: $single_column_breakpoint)
 	.header
 		position relative
