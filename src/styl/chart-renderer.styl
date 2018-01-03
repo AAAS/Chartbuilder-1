@@ -1,3 +1,4 @@
+//default settings: what svg export will grab
 $em_size = 20px
 $em_size_small = 14px
 $em_size_large = 36px
@@ -28,7 +29,7 @@ svg
 .em-size-wrapper
 	width 100%
 .em-size
-	font-size $em_size
+	//font-size $em_size_online
 	position absolute
 	visibility hidden
 	top 0
@@ -39,11 +40,11 @@ svg
 	height 1em
 
 .small .em-size
-	font-size $em_size_small
+	//font-size $em_size_print
 
 // SVG TEXT
 .svg-text
-	font-size $em_size
+	font-family $font-sans
 
 	tspan
 		&.em
@@ -65,8 +66,13 @@ svg
 			text-anchor start
 		&.right
 			text-anchor end
+	&.svg-text-sub // Customize sub text
+	    fill $color-chart-axis-text
+	    font-family $font-sans
+	    //font-size 8px
 	&.svg-text-title
 		fill $color-body-text
+		font-family $font-sans-bold
 
 .medium .svg-text
 	font-size $em_size
@@ -76,6 +82,7 @@ svg
 		font-size $em_size*0.6
 	&.svg-text-title
 		font-size $em_size
+		font-weight bold
 
 .small .svg-text
 		font-size $em_size_small
