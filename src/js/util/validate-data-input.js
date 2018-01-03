@@ -120,6 +120,11 @@ function validateDataInput(chartProps) {
 		inputErrors.push("UNEVEN_TICKS");
 	}
 
+	// Whether axis is missing axis label
+	if (catchChartMistakes.noAxisLabel(scale.primaryScale)) {
+		inputErrors.push("NO_AXIS_LABEL");
+	}
+
 	// Whether axis is missing pref and suf
 	if (catchChartMistakes.noPrefixSuffix(scale.primaryScale)) {
 		inputErrors.push("NO_PREFIX_SUFFIX");

@@ -21,23 +21,23 @@ function calculate_xy_dimensions(width, opts) {
 
 	switch (metadata.size) {
 		case "auto":
-			height = width * aspectRatio.wide;
+			height = Math.round(width * aspectRatio.wide);
 			break;
 
 		case 'medium':
-			height = width * aspectRatio.wide;
+			height = Math.round(width * aspectRatio.wide);
 			break;
 
 		case "spotLong":
-			height = width * aspectRatio.longSpot;
+			height = Math.round(width * aspectRatio.longSpot);
 			break;
 
 		case "spotSmall":
-			height = width * aspectRatio.smallSpot;
+			height = Math.round(width * aspectRatio.smallSpot);
 			break;
 
 		default:
-			height = width * aspectRatio.wide;
+			height = Math.round(width * aspectRatio.wide);
 	}
 
 	return {

@@ -51,7 +51,12 @@ var error_names = {
 	},
 	"UNEVEN_TICKS": {
 		location: "axis",
-		text: "Adjust axis settings to make your y-axis ticks even",
+		text: "Adjust axis settings to make your y-axis ticks pretty numbers",
+		type: "warning"
+	},
+	"NO_AXIS_LABEL": {
+		location: "axis",
+		text: "You are missing an axis label. Consider labelling your axis",
 		type: "warning"
 	},
 	"NO_PREFIX_SUFFIX": {

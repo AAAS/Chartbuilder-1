@@ -34,6 +34,10 @@ function axis_ticks_even(scale) {
 	return are_ticks_even;
 }
 
+function no_axis_label(scale) {
+	return (scale.axislabel === "");
+}
+
 function no_prefix_suffix(scale) {
 	return (scale.prefix === "" && scale.suffix === "");
 }
@@ -62,5 +66,6 @@ function all_modulo(tickValues, interval) {
 module.exports = {
 	axisTicksEven: axis_ticks_even,
 	tooMuchData: too_much_data,
+	noAxisLabel: no_axis_label,
 	noPrefixSuffix: no_prefix_suffix
 };
