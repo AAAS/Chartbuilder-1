@@ -102,17 +102,17 @@ var NumericScaleSettings = React.createClass({
 			<div className={this.props.className}>
 				{title_block}
 				<TextInput
+					id="axislabel"
+					className="scale-option"
+					onChange={this._handleScaleUpdate.bind(null, "axislabel")}
+					value={currScale.axislabel}
+					placeholder="Axis label (and unit)"
+				/>
+				<TextInput
 					className="scale-option"
 					onChange={this._handleScaleUpdate.bind(null, "prefix")}
 					value={currScale.prefix}
-					placeholder="Prefix"
-				/>
-				<TextInput
-					id="suffix"
-					className="scale-option"
-					onChange={this._handleScaleUpdate.bind(null, "suffix")}
-					value={currScale.suffix}
-					placeholder="Suffix"
+					placeholder="prefix"
 				/>
 				<div className="scale-tangle-inputs">
 					<LabelledTangle
@@ -135,7 +135,7 @@ var NumericScaleSettings = React.createClass({
 					/>
 					{tickSetting}
 					<LabelledTangle
-						label="Precision"
+						label="Decimal places"
 						labelClass="editor-label"
 						tangleClass="scale-option tangle-input"
 						onChange={this._handleScaleUpdate.bind(null, "precision")}
