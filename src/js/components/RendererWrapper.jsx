@@ -41,6 +41,7 @@ var chartRenderers = require("../charts/renderers");
  * Wrapper component that determines which type of chart to render, wrapping it
  * in Svg and telling it to draw.
 */
+var updatedValues = {};
 var RendererWrapper = React.createClass({
 
 	propTypes: {
